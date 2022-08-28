@@ -1,5 +1,5 @@
 from flask import Flask
-from routes.contacs import contacts
+from routes.contacts import contacts
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)

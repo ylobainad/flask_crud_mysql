@@ -1,4 +1,3 @@
-import email
 from utils.db import db
 
 class Contact(db.Model):
