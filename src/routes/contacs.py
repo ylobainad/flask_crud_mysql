@@ -1,4 +1,3 @@
-from urllib import request
 from flask import Blueprint, render_template, request, redirect, url_for
 from models.contact import Contact
 from utils.db import db
