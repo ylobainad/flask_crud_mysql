@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <form action="/new" method="post">
+        <input type="text" name="fullname" placeholder="Write your fullname">
+        <input type="text" name="email" placeholder="Write your email">
+        <input type="text" name="phone" placeholder="Write your phone">
+
+        <button type="submit">Save</button>
+    </form>
+
+    <div>
+        {%for contact in contacts %}
+        <div>
+            <h5>{{contact.fullname}}</h5>
+            <div>
+                <!-- <a href="/update">Update</a> -->
+                <!-- <a href="/delete">Delete</a> -->
+                <!-- contacts is the name of blueprint that we created in contacts.py-->
+                <a href="{{ url_for('contacts.update') }}">Update</a>
+                <a href="{{ url_for('contacts.delete', id=contact.id) }}">Delete</a>
+            </div>
+            <p>{{contact.email}}</p>
+            <p>{{contact.phone}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
